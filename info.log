@@ -2,3 +2,17 @@
 {"message":"Connected To InterView at localhost:5432","level":"info"}
 {"message":"Server listening at port 5000","level":"info"}
 {"message":"Connected To InterView at localhost:5432","level":"info"}
+{"message":"Server listening at port 5000","level":"info"}
+{"message":"Connected To InterView at localhost:5432","level":"info"}
+{"message":"Server listening at port 5000","level":"info"}
+{"message":"Connected To InterView at localhost:5432","level":"info"}
+{"message":"Server listening at port 5000","level":"info"}
+{"message":"Connected To InterView at localhost:5432","level":"info"}
+{"message":"Server listening at port 5000","level":"info"}
+{"message":"Connected To InterView at localhost:5432","level":"info"}
+{"message":"Request Error /Test - next is not a function","level":"error"}
+{"message":"GET 500 /Test - 19 ms","level":"info"}
+{"message":"Request Error /favicon.ico - next is not a function","level":"error"}
+{"message":"GET 500 /favicon.ico - 4 ms","level":"info"}
+{"message":"Server listening at port 5000","level":"info"}
+{"message":"Connected To InterView at localhost:5432","level":"info"}

@@ -32,7 +32,7 @@ module.exports = {
      return result.rows[0];
   },
 
-  CreateBooking: async (data)=>{
+  CreateBooking: async (data,callback)=>{
     var keys = [];
     var values = [];
     Object.keys(data).forEach(function(key) {
@@ -45,8 +45,22 @@ module.exports = {
    var query = 'INSERT INTO public."XpressData"('+keys[0]+','+keys[1]+','+keys[2]+','+keys[3]+','+keys[4]+','+keys[5]+','+keys[6]+','+keys[7]+','+keys[8]+','+keys[9]+','+keys[10]+','+keys[11]+','+keys[12]+','+keys[13]+','+keys[14]+','+keys[15]+','+keys[16]+','+keys[17]+
    ')VALUES ('+"'"+values[0]+"','"+values[1]+"','"+values[2]+"','"+values[3]+"','"+values[4]+"','"+values[5]+"','"+values[6]+"','"+values[7]+"','"+values[8]+"','"+values[9]+"','"+values[10]+"','"+values[11]+"','"+values[12]+"','"+values[13]+"','"+values[14]+"','"+values[15]+"','"+values[16]+"','"+values[17] +"')";
    console.log(query);
-     const result = await client.query(query);
-     return result;
+    await client.query(query, function (error , result) {
+        if(error){
+
+          callback(error);
+                              //return the error if te query has thrown errors
+        }
+        if(result){
+
+          callback(result)
+          //return result;   //return the response of the query
+        }
+
+
+      });
+
+
   },
 
   RideStart: async (data)=>{
@@ -91,6 +105,29 @@ module.exports = {
       console.log(query);
       const result = await client.query(query);
         return result;
+  },
+
+  GetBooking: async (data)=>{
+    var keys = [];
+    var values = [];
+    Object.keys(data).forEach(function(key) {
+      keys.push(key);
+      values.push(data[key]);
+      })
+
+      var query = 'SELECT * FROM public."XpressData"  WHERE ' +keys[0]+ "='"+values[0]+"'";
+      console.log(query);
+      const result = await client.query(query);
+        return result.rows[0];
+  },
+
+  GetallBookings: async ()=>{
+
+
+      var query = 'SELECT * FROM public."XpressData" ';
+      console.log(query);
+      const result = await client.query(query);
+        return result.rows;
   }
 
 }

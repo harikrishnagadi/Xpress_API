@@ -1,2 +1,10 @@
 {"message":"Request Error /Test - next is not a function","level":"error"}
 {"message":"Request Error /favicon.ico - next is not a function","level":"error"}
+{"name":"error","length":100,"severity":"FATAL","code":"28P01","file":"auth.c","line":"328","routine":"auth_failed","level":"error"}
+{"message":"Request Error /Test - next is not a function","level":"error"}
+{"message":"Request Error / - next is not a function","level":"error"}
+{"message":"Request Error /Test - next is not a function","level":"error"}
+{"message":"Request Error /favicon.ico - next is not a function","level":"error"}
+{"name":"error","length":100,"severity":"FATAL","code":"28P01","file":"auth.c","line":"328","routine":"auth_failed","level":"error"}
+{"message":"Request Error /favicon.ico - next is not a function","level":"error"}
+{"message":"Request Error /crbooking - next is not a function","level":"error"}

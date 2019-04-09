@@ -21,11 +21,12 @@ router.get('/time', async function(req,res){
 
 router.post('/crbooking', jsonparser,async function(req,res){
     console.log(req.body);
-    const result = await database.CreateBooking(req.body);
-    console.log("result is"+result);
+    database.CreateBooking(req.body, async function(result){
 
- //});
-  res.send(result);
+          console.log("result is "+result);
+          res.send(result);
+    })
+
 });
 
 router.post('/ridestart', jsonparser,async function(req,res){
@@ -49,6 +50,19 @@ router.post('/canbooking', jsonparser,async function(req,res){
   res.send(result);
 });
 
+router.post('/getallBookings', jsonparser,async function(req,res){
+    console.log(req.body);
+    const result = await database.GetallBookings();
+
+  res.send(result);
+});
+
+router.post('/getbooking', jsonparser,async function(req,res){
+    console.log(req.body);
+    const result = await database.GetBooking(req.body);
+
+  res.send(result);
+});
 
 
 module.exports = router;
